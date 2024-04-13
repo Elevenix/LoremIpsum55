@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private DialogManager dialogManager;
+    [SerializeField] private SceneManagerScript sceneManager;
 
     private List<GameObject> players = new List<GameObject>();
     private int actualGunHold = 0;
@@ -74,6 +75,15 @@ public class GameManager : MonoBehaviour
         if (players[id].TryGetComponent(out TextMeshPro tmp))
             return tmp;
         return null;
+    }
+
+    /// <summary>
+    /// Get the scene Manager
+    /// </summary>
+    /// <returns></returns>
+    public SceneManagerScript GetSceneManager()
+    {
+        return sceneManager;
     }
 
     /// <summary>
