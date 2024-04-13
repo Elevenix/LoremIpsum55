@@ -87,14 +87,21 @@ public class DialogManager : MonoBehaviour
         foreach (TextClone tc in dialog.exchanges)
         {
             TextMeshPro cloneTextMesh = GameManager.Instance.GetPlayerText(tc.id);
-            if(cloneTextMesh == null)
+            // Get TextMesh of the player
+            if (cloneTextMesh == null)
             {
-                Debug.LogError("TextMesh of the clone ["+tc.id+"] , does not exist...");
-                yield break;
+                cloneTextMesh = GameManager.Instance.GetPlayerText(0);
+                if(cloneTextMesh == null)
+                {
+                    Debug.LogError("There is no player or TextMesh in the scene ...");
+                    yield break;
+                }
             }
-            string text = "<color=orange>" + tc.text + "</color>"; ;
+            // Set the text and the color to display
+            string text = "<color=orange>" + tc.text + "</color>";
             if (colorPlayers.Length < tc.id)
                 text = "<color=" + colorPlayers[tc.id].ToString() + ">" + tc.text + "</color>";
+            // Show the text
             NextText(cloneTextMesh, text);
             yield return new WaitForSeconds((tc.text.Length * speedLetters) + tc.delaySwitch);
         }

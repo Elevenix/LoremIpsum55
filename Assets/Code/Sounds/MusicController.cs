@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource m_AudioSource;
+    private static MusicController musicController;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        m_AudioSource.volume = SceneManagerScript.m_MusicVolume;
+        if(musicController != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            musicController = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

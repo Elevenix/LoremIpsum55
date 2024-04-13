@@ -11,15 +11,15 @@ public class VolumeMusic : MonoBehaviour
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("music") || !PlayerPrefs.HasKey("sounds"))
+        if (!PlayerPrefs.HasKey("Music") || !PlayerPrefs.HasKey("Sounds"))
         {
-            PlayerPrefs.SetFloat("music", -20);
-            PlayerPrefs.SetFloat("sounds", -20);
+            PlayerPrefs.SetFloat("Music", -20);
+            PlayerPrefs.SetFloat("Sounds", -20);
         }
         else
         {
-            sliderMusic.value = PlayerPrefs.GetFloat("music");
-            sliderSounds.value = PlayerPrefs.GetFloat("sounds");
+            sliderMusic.value = PlayerPrefs.GetFloat("Music");
+            sliderSounds.value = PlayerPrefs.GetFloat("Sounds");
 
             ValueChangeMusic(sliderMusic.value);
             ValueChangeSound(sliderSounds.value);
@@ -29,13 +29,13 @@ public class VolumeMusic : MonoBehaviour
 
     public void ValueChangeMusic(float soundLevel)
     {
-        PlayerPrefs.SetFloat("music", soundLevel);
+        PlayerPrefs.SetFloat("Music", soundLevel);
         mixer.SetFloat("Music", soundLevel);
     }
 
     public void ValueChangeSound(float soundLevel)
     {
-        PlayerPrefs.SetFloat("sounds", soundLevel);
+        PlayerPrefs.SetFloat("Sounds", soundLevel);
         mixer.SetFloat("Sounds", soundLevel);
     }
 

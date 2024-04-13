@@ -10,9 +10,6 @@ public class RandomSounds : MonoBehaviour
 
     [SerializeField] private GrounpSound[] groupSounds;
 
-    [SerializeField] private float minPitch = 1;
-    [SerializeField] private float maxPitch = 1;
-
     private AudioSource _audioS;
 
     // Start is called before the first frame update
