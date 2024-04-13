@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     private RandomSounds randomSounds;
 
+    private Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         GameManager.Instance.AddPlayer(this.gameObject);
 
         randomSounds = GetComponent<RandomSounds>();
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,6 +50,25 @@ public class PlayerMovement : MonoBehaviour
         } else if (isPlayerFacingRight && horizontal < 0f)
         {
             Flip();
+        }
+
+        if(rb.velocity.x == 0)
+        {
+            animator.SetBool("isMoving", false);
+        } else
+        {
+            if (IsGrounded())
+            {
+                animator.SetBool("isMoving", true);
+            }
+        }
+
+        if(rb.velocity.y == 0)
+        {
+            animator.SetBool("isJumping", false);
+        } else
+        {
+            animator.SetBool("isJumping", true);
         }
     }
 
