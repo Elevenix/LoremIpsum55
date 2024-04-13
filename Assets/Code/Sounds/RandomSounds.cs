@@ -85,6 +85,7 @@ public class RandomSounds : MonoBehaviour
         {
             if (groupSounds[i].nameGroupSound.Equals(name))
                 return i;
+            i++;
         }
         return -1;
     }
