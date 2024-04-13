@@ -62,6 +62,7 @@ public class RandomSounds : MonoBehaviour
     public void PlaySound(AudioClip clip)
     {
         _audioS.clip = clip;
+        Debug.Log(clip);
         _audioS.Play();
     }
 

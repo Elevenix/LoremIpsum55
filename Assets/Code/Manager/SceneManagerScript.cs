@@ -12,6 +12,13 @@ public class SceneManagerScript : MonoBehaviour
     private Animator transition;
 
     private bool isTransition = false;
+    private RandomSounds randomSounds;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        randomSounds = GetComponent<RandomSounds>();
+    }
 
     private void Update()
     {
@@ -28,6 +35,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void Quit()
     {
+        randomSounds.PlaySound("Click");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
@@ -39,6 +47,7 @@ public class SceneManagerScript : MonoBehaviour
     /// </summary>
     public void NextLevel()
     {
+        randomSounds.PlaySound("Click");
         StartCoroutine(TransitionLoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
@@ -48,6 +57,7 @@ public class SceneManagerScript : MonoBehaviour
     /// <param name="id"> the id in the buildsettings </param>
     public void LoadLevel(int id)
     {
+        randomSounds.PlaySound("Click");
         StartCoroutine(TransitionLoadLevel(id));
     }
 
@@ -75,6 +85,7 @@ public class SceneManagerScript : MonoBehaviour
     /// </summary>
     public void OpenCloseSettings()
     {
+        randomSounds.PlaySound("Click");
         settingsPanel.SetActive(!settingsPanel.activeSelf);
     }
 }

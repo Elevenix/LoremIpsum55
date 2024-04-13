@@ -9,6 +9,15 @@ public class BallClone : MonoBehaviour
     private GameObject playerLaunch;
     private bool first = true;
 
+    private RandomSounds RandomSounds;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        RandomSounds = GetComponent<RandomSounds>();
+    }
+
+
     public void SetPlayerLaunch(GameObject go)
     {
         playerLaunch = go;
@@ -21,6 +30,6 @@ public class BallClone : MonoBehaviour
             first = false;
             Instantiate(clonePlayer, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-        }
+        } 
     }
 }
