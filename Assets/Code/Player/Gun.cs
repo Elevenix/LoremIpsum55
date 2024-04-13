@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform gunTransform;
     [SerializeField] private Transform spawnPos;
     [SerializeField] private float speedEjectionClone = 1f;
-    [SerializeField] private GameObject clone;
+    [SerializeField] private GameObject ballClone;
 
     private Vector3 mousePos;
     private Vector2 lookdir;
@@ -42,9 +42,9 @@ public class Gun : MonoBehaviour
     /// </summary>
     private void ShootClone()
     {
-        if (clone != null)
+        if (ballClone != null)
         {
-            GameObject instanceClone = Instantiate(clone, spawnPos.position, Quaternion.identity);
+            GameObject instanceClone = Instantiate(ballClone, spawnPos.position, Quaternion.identity);
             // TODO : shoot the ball
             if (instanceClone.TryGetComponent(out Rigidbody2D rbClone))
             {

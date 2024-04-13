@@ -8,7 +8,7 @@ public class BallClone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
+        if (collision.CompareTag("Untagged") && !collision.CompareTag("Player"))
         {
             Instantiate(clonePlayer, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
