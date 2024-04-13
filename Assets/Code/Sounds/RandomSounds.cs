@@ -71,13 +71,14 @@ public class RandomSounds : MonoBehaviour
     private void RandomSound(int id)
     {
         _audioS.clip = groupSounds[id].sounds[UnityEngine.Random.Range(0, groupSounds[id].sounds.Length)];
-        _audioS.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+        _audioS.pitch = UnityEngine.Random.Range(groupSounds[id].pitch.x, groupSounds[id].pitch.y);
+        _audioS.volume = groupSounds[id].volume;
     }
 
     private void RandomSound(AudioClip[] clips)
     {
         _audioS.clip = clips[UnityEngine.Random.Range(0, clips.Length)];
-        _audioS.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+        _audioS.pitch = 1;
     }
 
     private int GetGroupSoundId(string name)
@@ -96,5 +97,7 @@ public class RandomSounds : MonoBehaviour
 public class GrounpSound
 {
     public string nameGroupSound;
+    [Range(0f, 1f)] public float volume = .5f;
+    public Vector2 pitch = Vector2.one;
     public AudioClip[] sounds;
 }
