@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField]
     private Transform groundCheck;
+    [SerializeField] private float radiusGroundCheck = .2f;
     [SerializeField]
     private LayerMask groundLayer;
     private float horizontal;
@@ -16,11 +17,16 @@ public class PlayerMovement : MonoBehaviour
     private float speed;
     [SerializeField]
     private float jumpingPower;
+    [SerializeField]
+    private Transform visualPlayer;
+
     private bool isPlayerFacingRight = true;
+    private Collider2D myCollider;
 
     // Start is called before the first frame update
     void Start()
     {
+        myCollider = GetComponent<Collider2D>();
         GameManager.Instance.AddPlayer(this.gameObject);
     }
 
@@ -40,15 +46,16 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        Collider2D col = Physics2D.OverlapCircle(groundCheck.position, radiusGroundCheck, groundLayer);
+        return col && col != myCollider;
     }
 
     private void Flip()
     {
         isPlayerFacingRight = !isPlayerFacingRight;
-        Vector3 localScale = transform.localScale;
+        Vector3 localScale = visualPlayer.localScale;
         localScale.x *= -1f;
-        transform.localScale = localScale;
+        visualPlayer.localScale = localScale;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -67,5 +74,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(groundCheck.position, radiusGroundCheck);
     }
 }

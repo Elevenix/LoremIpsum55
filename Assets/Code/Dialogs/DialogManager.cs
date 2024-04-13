@@ -3,72 +3,101 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+public enum TextColor
+{
+    red,
+    yellow,
+    blue,
+    white,
+    black,
+    pink,
+    orange,
+    purple,
+    green,
+}
+
 public class DialogManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textMesh;
     [SerializeField] private float speedLetters = .1f;
 
-    [Space(8)]
-    [SerializeField] [TextArea] private string[] testDialog;
+    [SerializeField] private TextColor[] colorPlayers;
 
-    private bool textFinished = false;
-    private int actualText = 0;
-    private Coroutine delayLetters;
-    private string[] dialog;
+    private bool textFinished = true;
+    private Coroutine letterCoroutine;
+    private TextMeshPro previousTextMesh;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool IsTextFinished()
     {
-        LaunchDialog(testDialog);
+        return textFinished;
     }
 
-    private void Update()
+    /// <summary>
+    /// Launch the exchanges of lines from the Dialog
+    /// </summary>
+    /// <param name="d"> The exchanges </param>
+    /// <param name="textMesh"></param>
+    public void LaunchDialog(Dialog dialog)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && dialog != null && actualText >= 0)
-        {
-            if (textFinished)
-            {
-                NextText();
-            }
-            else
-            {
-                PassText();
-            }
-        }
+        StartCoroutine(LaunchDialogDelayed(dialog));
     }
 
-    public void LaunchDialog(string[] d)
+    /// <summary>
+    /// Stop the dialog
+    /// </summary>
+    /// <param name="textMesh"></param>
+    public void StopDialog()
     {
-        StopDialog();
-        dialog = d;
-        actualText = 0;
-        delayLetters = StartCoroutine(DelayLetters(dialog[actualText]));
-    }
-
-    private void StopDialog()
-    {
-        dialog = null;
-        if (delayLetters != null)
-            StopCoroutine(delayLetters);
-        actualText = 0;
+        StopAllCoroutines();
         textFinished = true;
-        textMesh.text = "";
+        previousTextMesh.text = "";
     }
 
-    private void NextText()
+    /// <summary>
+    /// Launch the next text
+    /// </summary>
+    /// <param name="textMesh"></param>
+    public void NextText(TextMeshPro textMesh, string text)
     {
-        actualText++;
-        if(actualText < dialog.Length)
-            delayLetters = StartCoroutine(DelayLetters(dialog[actualText]));
-        else
-            StopDialog();
+        if (textMesh != null)
+            previousTextMesh.text = "";
+        previousTextMesh = textMesh;
+        letterCoroutine = StartCoroutine(DelayLetters(text, textMesh));
     }
 
-    private void PassText()
+    /// <summary>
+    /// Pass text (used with shortcuts)
+    /// </summary>
+    /// <param name="textMesh"></param>
+    private void PassText(TextMeshPro textMesh, string text)
     {
-        if (delayLetters != null)
-            StopCoroutine(delayLetters);
-        textMesh.text = dialog[actualText];
+        if (letterCoroutine != null)
+            StopCoroutine(letterCoroutine);
+        textMesh.text = text;
+        textFinished = true;
+    }
+
+    /// <summary>
+    /// Launch the dialog coroutine
+    /// </summary>
+    /// <param name="dialog"></param>
+    /// <returns></returns>
+    private IEnumerator LaunchDialogDelayed(Dialog dialog)
+    {
+        textFinished = false;
+        foreach (TextClone tc in dialog.exchanges)
+        {
+            TextMeshPro cloneTextMesh = GameManager.Instance.GetPlayerText(tc.id);
+            if(cloneTextMesh == null)
+            {
+                Debug.LogError("TextMesh of the clone ["+tc.id+"] , does not exist...");
+                yield break;
+            }
+            string text = "<color=orange>" + tc.text + "</color>"; ;
+            if (colorPlayers.Length < tc.id)
+                text = "<color=" + colorPlayers[tc.id].ToString() + ">" + tc.text + "</color>";
+            NextText(cloneTextMesh, text);
+            yield return new WaitForSeconds((tc.text.Length * speedLetters) + tc.delaySwitch);
+        }
         textFinished = true;
     }
 
@@ -77,9 +106,8 @@ public class DialogManager : MonoBehaviour
     /// </summary>
     /// <param name="text"> the string to delayed </param>
     /// <returns></returns>
-    private IEnumerator DelayLetters(string text)
+    private IEnumerator DelayLetters(string text, TextMeshPro textMesh)
     {
-        textFinished = false;
         string newText = "";
         for(int i=0; i < text.Length; i++)
         {
@@ -90,7 +118,5 @@ public class DialogManager : MonoBehaviour
                 yield return new WaitForSeconds(speedLetters);
             }
         }
-        textFinished = true;
     }
-
 }

@@ -6,10 +6,19 @@ public class BallClone : MonoBehaviour
 {
     [SerializeField] private GameObject clonePlayer;
 
+    private GameObject playerLaunch;
+    private bool first = true;
+
+    public void SetPlayerLaunch(GameObject go)
+    {
+        playerLaunch = go;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Untagged") && !collision.CompareTag("Player"))
+        if (first && !collision.CompareTag("GroundThrough") && collision.gameObject != playerLaunch)
         {
+            first = false;
             Instantiate(clonePlayer, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
