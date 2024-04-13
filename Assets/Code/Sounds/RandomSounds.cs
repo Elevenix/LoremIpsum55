@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class RandomSounds : MonoBehaviour
 {
     [SerializeField] private bool playOnAwake = false;
 
-    [SerializeField] private AudioClip[] sounds;
+    [SerializeField] private GrounpSound[] groupSounds;
 
     [SerializeField] private float minPitch = 1;
     [SerializeField] private float maxPitch = 1;
@@ -24,24 +26,75 @@ public class RandomSounds : MonoBehaviour
     {
         if (playOnAwake)
             PlaySound();
-        
     }
 
+    /// <summary>
+    /// Play the first group of sound
+    /// </summary>
     public void PlaySound()
     {
-        RandomSound();
+        RandomSound(0);
         _audioS.Play();
     }
 
+    /// <summary>
+    /// Name
+    /// </summary>
+    /// <param name="name"> Name given of the group sound</param>
+    public void PlaySound(string name)
+    {
+        int id = GetGroupSoundId(name);
+        RandomSound(id);
+        _audioS.Play();
+    }
+
+    /// <summary>
+    /// Launch random sound from an array of clips
+    /// </summary>
+    /// <param name="clips"></param>
+    public void PlaySound(AudioClip[] clips)
+    {
+        RandomSound(clips);
+        _audioS.Play();
+    }
+
+    /// <summary>
+    /// Play the sound given
+    /// </summary>
+    /// <param name="clip"></param>
     public void PlaySound(AudioClip clip)
     {
         _audioS.clip = clip;
         _audioS.Play();
     }
 
-    private void RandomSound()
+    private void RandomSound(int id)
     {
-        _audioS.clip = sounds[Random.Range(0, sounds.Length)];
-        _audioS.pitch = Random.Range(minPitch, maxPitch);
+        _audioS.clip = groupSounds[id].sounds[UnityEngine.Random.Range(0, groupSounds[id].sounds.Length)];
+        _audioS.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
     }
+
+    private void RandomSound(AudioClip[] clips)
+    {
+        _audioS.clip = clips[UnityEngine.Random.Range(0, clips.Length)];
+        _audioS.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+    }
+
+    private int GetGroupSoundId(string name)
+    {
+        int i = 0;
+        while (i < groupSounds.Length)
+        {
+            if (groupSounds[i].nameGroupSound.Equals(name))
+                return i;
+        }
+        return -1;
+    }
+}
+
+[Serializable]
+public class GrounpSound
+{
+    public string nameGroupSound;
+    public AudioClip[] sounds;
 }
