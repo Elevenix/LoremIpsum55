@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    private RandomSounds randomSounds;
+
+
     // Singleton
     public void Awake()
     {
@@ -25,6 +28,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        randomSounds = GetComponent<RandomSounds>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -32,6 +41,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             ChangeGunHold();
+            randomSounds.PlaySound("GunHolder");
         }
     }
 

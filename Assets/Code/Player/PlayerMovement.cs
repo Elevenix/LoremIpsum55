@@ -23,11 +23,16 @@ public class PlayerMovement : MonoBehaviour
     private bool isPlayerFacingRight = true;
     private Collider2D myCollider;
 
+    private RandomSounds randomSounds;
+
+
     // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<Collider2D>();
         GameManager.Instance.AddPlayer(this.gameObject);
+
+        randomSounds = GetComponent<RandomSounds>();
     }
 
     // Update is called once per frame
@@ -68,9 +73,10 @@ public class PlayerMovement : MonoBehaviour
         if(context.performed && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            randomSounds.PlaySound("Jump");
         }
 
-        if(context.canceled && rb.velocity.y > 0.0f)
+        if (context.canceled && rb.velocity.y > 0.0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }

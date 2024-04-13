@@ -12,6 +12,15 @@ public class Gun : MonoBehaviour
     private Vector3 mousePos;
     private Vector2 lookdir;
 
+    private RandomSounds randomSounds;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        randomSounds = GetComponent<RandomSounds>();
+    }
+
+
     private void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -19,6 +28,7 @@ public class Gun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ShootClone();
+            randomSounds.PlaySound("Shoot");
         }
     }
 
