@@ -45,10 +45,13 @@ public class Gun : MonoBehaviour
         if (ballClone != null)
         {
             GameObject instanceClone = Instantiate(ballClone, spawnPos.position, Quaternion.identity);
-            // TODO : shoot the ball
             if (instanceClone.TryGetComponent(out Rigidbody2D rbClone))
             {
                 rbClone.velocity = lookdir.normalized * speedEjectionClone;
+            }
+            if(instanceClone.TryGetComponent(out BallClone ball))
+            {
+                ball.SetPlayerLaunch(this.gameObject);
             }
         }
     }
@@ -60,6 +63,7 @@ public class Gun : MonoBehaviour
 
     private void OnEnable()
     {
+        GunRotation();
         gunTransform.gameObject.SetActive(true);
     }
 }

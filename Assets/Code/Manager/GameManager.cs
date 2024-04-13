@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private DialogManager dialogManager;
+
     private List<GameObject> players = new List<GameObject>();
     private int actualGunHold = 0;
 
@@ -50,6 +53,27 @@ public class GameManager : MonoBehaviour
                 gun.enabled = false;
             }
         }
+    }
+
+    /// <summary>
+    /// Launch the dialog given
+    /// </summary>
+    /// <param name="dialog"> Dialog to launch</param>
+    public void LaunchDialog(Dialog dialog)
+    {
+        dialogManager.LaunchDialog(dialog);
+    }
+
+    /// <summary>
+    /// Get the text meshPro of the clone
+    /// </summary>
+    /// <param name="id"> The id of the clone </param>
+    /// <returns></returns>
+    public TextMeshPro GetPlayerText(int id)
+    {
+        if (players[id].TryGetComponent(out TextMeshPro tmp))
+            return tmp;
+        return null;
     }
 
     /// <summary>

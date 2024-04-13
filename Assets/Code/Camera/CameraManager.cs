@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraShake : MonoBehaviour
+public class CameraManager : MonoBehaviour
 {
-    public static CameraShake Instance;
+    public static CameraManager Instance;
 
-    [SerializeField] private Transform cam;
+    [SerializeField] private Camera cam;
 
     private Vector3 initPos;
     private Coroutine camShaking;
+    private float initSizeProjection;
+    private bool isZooming = false;
 
     private void Awake()
     {
@@ -22,7 +24,8 @@ public class CameraShake : MonoBehaviour
         {
             Instance = this;
         }
-        initPos = cam.position;
+        initPos = cam.transform.position;
+        initSizeProjection = cam.orthographicSize;
     }
 
     /// <summary>
@@ -60,11 +63,34 @@ public class CameraShake : MonoBehaviour
         float deltaDelay = delay / amount;
         for(int i = 0; i < amount; i++)
         {
-            float randX = Random.Range(cam.position.x - magnitude, cam.position.x + magnitude);
-            float randY = Random.Range(cam.position.y - magnitude, cam.position.y + magnitude);
-            cam.position = new Vector3(randX, randY, cam.position.z);
+            float randX = Random.Range(cam.transform.position.x - magnitude, cam.transform.position.x + magnitude);
+            float randY = Random.Range(cam.transform.position.y - magnitude, cam.transform.position.y + magnitude);
+            cam.transform.position = new Vector3(randX, randY, cam.transform.position.z);
             yield return new WaitForSeconds(deltaDelay);
         }
-        cam.position = initPos;
-    }    
+        if(!isZooming)
+            cam.transform.position = initPos;
+    }
+
+    /// <summary>
+    /// Camera Zoom 
+    /// </summary>
+    /// <param name="posZoomed"> Position to zoom (z value not set)</param>
+    /// <param name="zoomValue"> Multiply of the zoom (cannot be inferior or equal to zero) </param>
+    public void Zoom(Vector3 posZoomed, float zoomValue)
+    {
+        isZooming = true;
+        cam.transform.position = new Vector3(posZoomed.x,posZoomed.y, cam.transform.position.z);
+        cam.orthographicSize *= zoomValue;
+    }
+
+    /// <summary>
+    /// Return the initial value of the camera zoom
+    /// </summary>
+    public void DeZoom()
+    {
+        isZooming = false;
+        cam.orthographicSize = initSizeProjection;
+        cam.transform.position = initPos;
+    }
 }
