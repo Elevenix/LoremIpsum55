@@ -9,6 +9,18 @@ public class SceneManagerScript : MonoBehaviour
     private GameObject settingsPanel;
 
     [SerializeField]
+    private GameObject quitButton;
+
+    [SerializeField]
+    private GameObject menuButton;
+
+    [SerializeField]
+    private GameObject playButton;
+
+    [SerializeField]
+    private GameObject menuPanel;
+
+    [SerializeField]
     private Animator transition;
 
     private bool isTransition = false;
@@ -18,13 +30,17 @@ public class SceneManagerScript : MonoBehaviour
     void Start()
     {
         randomSounds = GetComponent<RandomSounds>();
+        if (SceneManager.GetActiveScene().name != "Menu")
+        {
+            menuPanel.SetActive(false);
+        }
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            OpenCloseSettings();
+            OpenCloseMenu();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -49,6 +65,12 @@ public class SceneManagerScript : MonoBehaviour
     {
         randomSounds.PlaySound("Click");
         StartCoroutine(TransitionLoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    public void BackToMenu()
+    {
+        randomSounds.PlaySound("Click");
+        SceneManager.LoadScene("Menu");
     }
 
     /// <summary>
@@ -87,5 +109,21 @@ public class SceneManagerScript : MonoBehaviour
     {
         randomSounds.PlaySound("Click");
         settingsPanel.SetActive(!settingsPanel.activeSelf);
+        if (SceneManager.GetActiveScene().name != "Menu")
+        {
+            menuButton.SetActive(!menuButton.activeSelf);
+        }
     }
+
+    public void OpenCloseMenu()
+    {
+        if (SceneManager.GetActiveScene().name != "Menu")
+        {
+            menuPanel.SetActive(!menuPanel.activeSelf);
+            menuButton.SetActive(!menuButton.activeSelf);
+            quitButton.SetActive(!quitButton.activeSelf);
+            playButton.SetActive(!playButton.activeSelf);
+        }
+    }
+
 }
