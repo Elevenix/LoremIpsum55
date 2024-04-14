@@ -84,6 +84,8 @@ public class SceneManagerScript : MonoBehaviour
         int idNextLevel = SceneManager.GetActiveScene().buildIndex + 1;
         if (SceneManager.sceneCountInBuildSettings > idNextLevel)
             StartCoroutine(TransitionLoadLevel(idNextLevel));
+        else
+            StartCoroutine(TransitionLoadLevel(0));
     }
 
     public void BackToMenu()

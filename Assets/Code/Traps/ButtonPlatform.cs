@@ -6,6 +6,7 @@ public class ButtonPlatform : MonoBehaviour
 {
     [SerializeField] private PlatformMovable platform;
     [SerializeField] private Animator anim;
+    [SerializeField] private Shake shakeAction;
 
     private bool usedOnce = false;
 
@@ -14,6 +15,8 @@ public class ButtonPlatform : MonoBehaviour
         if (collision.CompareTag("Player") && !usedOnce)
         {
             usedOnce = true;
+            if (shakeAction != null)
+                CameraManager.Instance.Shaker(shakeAction);
             anim.SetTrigger("Press");
             platform.Launch(true);
         }

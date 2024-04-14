@@ -18,12 +18,14 @@ public class PlatformMovable : MonoBehaviour
     [SerializeField] private float delayMove;
     [SerializeField] private bool onlyOne;
     [SerializeField] private bool stop = true;
+    [SerializeField] private bool platformAtStartPos = true;
 
     private int direction = 1;
 
     private void Start()
     {
-        platform.position = startPos.position;
+        if(!platformAtStartPos)
+            platform.position = startPos.position;
     }
 
     // Update is called once per frame

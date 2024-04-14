@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 160607401
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -1032401567, guid: 12e12c4350582b7448fede409d51e55b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 0}
   anim: {fileID: 8259733088326997548}
+  shakeAction: {fileID: 11400000, guid: 5a50f2f47d8154b4cbc374941581b33e, type: 2}
 --- !u!61 &8796897507919626412
 BoxCollider2D:
   m_ObjectHideFlags: 0
