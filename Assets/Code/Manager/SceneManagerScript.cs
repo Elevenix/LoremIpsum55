@@ -2,26 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneManagerScript : MonoBehaviour
 {
     [SerializeField]
+    private bool isMenu = false;
+
+    [SerializeField]
     private GameObject settingsPanel;
-
-    [SerializeField]
-    private GameObject quitButton;
-
-    [SerializeField]
-    private GameObject menuButton;
-
-    [SerializeField]
-    private GameObject playButton;
 
     [SerializeField]
     private GameObject menuPanel;
 
     [SerializeField]
+    private GameObject pausePanel;
+
+    [SerializeField]
+    private Button englishLanguage;
+
+    [SerializeField]
+    private Button frenchLanguage;
+
+    [SerializeField]
     private Animator transition;
+
+    [SerializeField]
+    private float transitionDuration = 1;
 
     private bool isTransition = false;
     private RandomSounds randomSounds;
@@ -29,18 +36,28 @@ public class SceneManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transition.SetTrigger("Start");
+
         randomSounds = GetComponent<RandomSounds>();
-        if (SceneManager.GetActiveScene().name != "Menu")
+        if (!isMenu)
         {
             menuPanel.SetActive(false);
         }
+        else
+        {
+            menuPanel.SetActive(true);
+        }
+        pausePanel.SetActive(false);
+
+        if(!PlayerPrefs.HasKey("Language"))
+            ChangeLanguage(true);
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            OpenCloseMenu();
+            OpenClosePause();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -64,13 +81,15 @@ public class SceneManagerScript : MonoBehaviour
     public void NextLevel()
     {
         randomSounds.PlaySound("Click");
-        StartCoroutine(TransitionLoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        int idNextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        if (SceneManager.sceneCountInBuildSettings > idNextLevel)
+            StartCoroutine(TransitionLoadLevel(idNextLevel));
     }
 
     public void BackToMenu()
     {
         randomSounds.PlaySound("Click");
-        SceneManager.LoadScene("Menu");
+        StartCoroutine(TransitionLoadLevel(0));
     }
 
     /// <summary>
@@ -97,7 +116,7 @@ public class SceneManagerScript : MonoBehaviour
             yield break;
         isTransition = true;
         transition.SetTrigger("End");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(transitionDuration);
         SceneManager.LoadSceneAsync(id);
         isTransition = false;
     }
@@ -109,21 +128,44 @@ public class SceneManagerScript : MonoBehaviour
     {
         randomSounds.PlaySound("Click");
         settingsPanel.SetActive(!settingsPanel.activeSelf);
-        if (SceneManager.GetActiveScene().name != "Menu")
+        if (!isMenu)
         {
-            menuButton.SetActive(!menuButton.activeSelf);
+            pausePanel.SetActive(!pausePanel.activeSelf);
         }
     }
 
-    public void OpenCloseMenu()
+    public void OpenClosePause()
     {
-        if (SceneManager.GetActiveScene().name != "Menu")
+        if (!isMenu)
         {
-            menuPanel.SetActive(!menuPanel.activeSelf);
-            menuButton.SetActive(!menuButton.activeSelf);
-            quitButton.SetActive(!quitButton.activeSelf);
-            playButton.SetActive(!playButton.activeSelf);
+            pausePanel.SetActive(!pausePanel.activeSelf);
         }
     }
 
+    public void ChangeLanguage(bool isEn)
+    {
+        ColorBlock en = englishLanguage.colors;
+        ColorBlock fr = frenchLanguage.colors;
+        // white color block at normal color
+        ColorBlock whiteLanguage = englishLanguage.colors;
+        whiteLanguage.normalColor = Color.white;
+        if (isEn)
+        {
+            en.normalColor = en.selectedColor;
+            englishLanguage.colors = en;
+
+            frenchLanguage.colors = whiteLanguage;
+
+            PlayerPrefs.SetInt("Language", 0);
+        }
+        else
+        {
+            fr.normalColor = fr.selectedColor;
+            frenchLanguage.colors = fr;
+
+            englishLanguage.colors = whiteLanguage;
+
+            PlayerPrefs.SetInt("Language", 1);
+        }
+    }
 }
