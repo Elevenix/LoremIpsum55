@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
                 gun.enabled = false;
             }
         }
+
+        if(player.TryGetComponent(out PlayerTextMesh ptm))
+        {
+            ptm.textMeshId.text = (players.Count - 1).ToString();
+        }
     }
 
     /// <summary>

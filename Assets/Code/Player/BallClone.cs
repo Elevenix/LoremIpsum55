@@ -5,18 +5,16 @@ using UnityEngine;
 public class BallClone : MonoBehaviour
 {
     [SerializeField] private GameObject clonePlayer;
+    [SerializeField] private GameObject particleSpawn;
 
     private GameObject playerLaunch;
     private bool first = true;
 
-    private RandomSounds RandomSounds;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        RandomSounds = GetComponent<RandomSounds>();
+        // Destroy gameObject 10 seconds later
+        Destroy(this.gameObject, 10);
     }
-
 
     public void SetPlayerLaunch(GameObject go)
     {
@@ -28,6 +26,8 @@ public class BallClone : MonoBehaviour
         if (first && !collision.CompareTag("GroundThrough") && collision.gameObject != playerLaunch)
         {
             first = false;
+            if(particleSpawn != null)
+                Instantiate(particleSpawn, transform.position, Quaternion.identity);
             Instantiate(clonePlayer, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         } 
