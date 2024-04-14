@@ -21,6 +21,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private float speedLetters = .1f;
 
     [SerializeField] private TextColor[] colorPlayers;
+    [SerializeField] private TMP_FontAsset[] fontsPlayers;
 
     private bool textFinished = true;
     private Coroutine letterCoroutine;
@@ -103,6 +104,13 @@ public class DialogManager : MonoBehaviour
                     yield break;
                 }
             }
+
+            // Set Font
+            if (tc.id < fontsPlayers.Length)
+                cloneTextMesh.font = fontsPlayers[tc.id];
+            else
+                cloneTextMesh.font = fontsPlayers[fontsPlayers.Length - 1];
+
             // Set the text and the color to display
             string color = "<color=orange>";
             if (colorPlayers.Length > tc.id)

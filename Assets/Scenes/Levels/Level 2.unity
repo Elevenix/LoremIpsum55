@@ -2159,6 +2159,14 @@ PrefabInstance:
       propertyPath: dialog
       value: 
       objectReference: {fileID: 11400000, guid: a0f0ce52d912fc74c9fd09b60ad477b2, type: 2}
+    - target: {fileID: 2058509333209069960, guid: 6955033fb9472b24f889f7ed21ddba80, type: 3}
+      propertyPath: dialogEn
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c395b087062647eb8cb08979300c966, type: 2}
+    - target: {fileID: 2058509333209069960, guid: 6955033fb9472b24f889f7ed21ddba80, type: 3}
+      propertyPath: dialogFr
+      value: 
+      objectReference: {fileID: 11400000, guid: a0f0ce52d912fc74c9fd09b60ad477b2, type: 2}
     - target: {fileID: 3122008694280818791, guid: 6955033fb9472b24f889f7ed21ddba80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.46

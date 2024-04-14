@@ -64,6 +64,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedLetters: 0.05
   colorPlayers: 030000000000000002000000010000000800000007000000060000000500000004000000
+  fontsPlayers:
+  - {fileID: 11400000, guid: 230d32bd382e024428292ce9f01b6a42, type: 2}
+  - {fileID: 11400000, guid: 7c063f595aed9534cbc0fdb336c63478, type: 2}
+  - {fileID: 11400000, guid: 3d879b46ec510a74ea5d667d4fde2a28, type: 2}
+  - {fileID: 11400000, guid: 1ad5ea9b2a943ee47a0eca07470ecccf, type: 2}
 --- !u!82 &1996636627846206121
 AudioSource:
   m_ObjectHideFlags: 0

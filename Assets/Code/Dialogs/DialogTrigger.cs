@@ -15,6 +15,8 @@ public class DialogTrigger : MonoBehaviour
                 GameManager.Instance.LaunchDialog(dialogEn);
             else
                 GameManager.Instance.LaunchDialog(dialogFr);
+
+            //print("Language : " + PlayerPrefs.GetInt("Language"));
         }
     }
 }
