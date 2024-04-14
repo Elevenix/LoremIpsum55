@@ -25,6 +25,12 @@ public class DialogManager : MonoBehaviour
     private bool textFinished = true;
     private Coroutine letterCoroutine;
     private TextMeshPro previousTextMesh;
+    private RandomSounds randomSounds;
+
+    private void Awake()
+    {
+        randomSounds = GetComponent<RandomSounds>();
+    }
 
     public bool IsTextFinished()
     {
@@ -56,12 +62,12 @@ public class DialogManager : MonoBehaviour
     /// Launch the next text
     /// </summary>
     /// <param name="textMesh"></param>
-    public void NextText(TextMeshPro textMesh, string text)
+    public void NextText(TextMeshPro textMesh, string text, string color)
     {
-        if (textMesh != null)
+        if (previousTextMesh != null)
             previousTextMesh.text = "";
         previousTextMesh = textMesh;
-        letterCoroutine = StartCoroutine(DelayLetters(text, textMesh));
+        letterCoroutine = StartCoroutine(DelayLetters(text, textMesh, color));
     }
 
     /// <summary>
@@ -98,12 +104,13 @@ public class DialogManager : MonoBehaviour
                 }
             }
             // Set the text and the color to display
-            string text = "<color=orange>" + tc.text + "</color>";
-            if (colorPlayers.Length < tc.id)
-                text = "<color=" + colorPlayers[tc.id].ToString() + ">" + tc.text + "</color>";
+            string color = "<color=orange>";
+            if (colorPlayers.Length > tc.id)
+                color = "<color=" + colorPlayers[tc.id].ToString() + ">";
             // Show the text
-            NextText(cloneTextMesh, text);
+            NextText(cloneTextMesh, tc.text, color);
             yield return new WaitForSeconds((tc.text.Length * speedLetters) + tc.delaySwitch);
+            cloneTextMesh.text = "";
         }
         textFinished = true;
     }
@@ -113,11 +120,12 @@ public class DialogManager : MonoBehaviour
     /// </summary>
     /// <param name="text"> the string to delayed </param>
     /// <returns></returns>
-    private IEnumerator DelayLetters(string text, TextMeshPro textMesh)
+    private IEnumerator DelayLetters(string text, TextMeshPro textMesh, string color)
     {
-        string newText = "";
+        string newText = color;
         for(int i=0; i < text.Length; i++)
         {
+            randomSounds.PlaySound("Letters");
             newText += text[i];
             if(text[i] != ' ')
             {

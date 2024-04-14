@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private DialogManager dialogManager;
     [SerializeField] private SceneManagerScript sceneManager;
+    [SerializeField] private bool hasGun = true;
 
     private List<GameObject> players = new List<GameObject>();
     private int actualGunHold = 0;
@@ -21,17 +22,13 @@ public class GameManager : MonoBehaviour
     {
         if(Instance != null)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
         {
             Instance = this;
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
         randomSounds = GetComponent<RandomSounds>();
     }
 
@@ -46,16 +43,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GiveGun()
+    {
+        hasGun = true;
+        if (players[0].TryGetComponent(out PlayerTextMesh ptm))
+        {
+            ptm.textMeshId.text = "0";
+        }
+
+        if (players[0].TryGetComponent(out Gun gun))
+        {
+            gun.enabled = true;
+        }
+    }
+
     /// <summary>
     /// Add Player in the list
     /// </summary>
     /// <param name="player"></param>
     public void AddPlayer(GameObject player)
     {
-        players.Add(player);
-        if(player.TryGetComponent(out Gun gun))
+        if (player.TryGetComponent(out PlayerTextMesh ptm) && hasGun)
         {
-            if (players.Count == 1)
+            ptm.textMeshId.text = (players.Count).ToString();
+        }
+        players.Add(player);
+
+        if (player.TryGetComponent(out Gun gun))
+        {
+            if (players.Count == 1 && hasGun)
             {
                 gun.enabled = true;
             }
@@ -63,11 +79,6 @@ public class GameManager : MonoBehaviour
             {
                 gun.enabled = false;
             }
-        }
-
-        if(player.TryGetComponent(out PlayerTextMesh ptm))
-        {
-            ptm.textMeshId.text = (players.Count - 1).ToString();
         }
     }
 
@@ -87,8 +98,8 @@ public class GameManager : MonoBehaviour
     /// <returns></returns>
     public TextMeshPro GetPlayerText(int id)
     {
-        if (players[id].TryGetComponent(out TextMeshPro tmp))
-            return tmp;
+        if (players[id].TryGetComponent(out PlayerTextMesh tmp))
+            return tmp.textMeshDialog;
         return null;
     }
 
