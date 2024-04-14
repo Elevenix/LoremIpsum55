@@ -6,6 +6,7 @@ public class BallClone : MonoBehaviour
 {
     [SerializeField] private GameObject clonePlayer;
     [SerializeField] private GameObject particleSpawn;
+    [SerializeField] private Shake shakeSpawnClone;
 
     private GameObject playerLaunch;
     private bool first = true;
@@ -29,6 +30,7 @@ public class BallClone : MonoBehaviour
             if(particleSpawn != null)
                 Instantiate(particleSpawn, transform.position, Quaternion.identity);
             Instantiate(clonePlayer, transform.position, Quaternion.identity);
+            CameraManager.Instance.Shaker(shakeSpawnClone);
             Destroy(this.gameObject);
         } 
     }

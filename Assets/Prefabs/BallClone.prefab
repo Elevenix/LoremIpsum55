@@ -311,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clonePlayer: {fileID: 4835368600372716854, guid: 0ae3545f9b495470eae6dd13144fa029, type: 3}
   particleSpawn: {fileID: 7531116540036912419, guid: fe5ac924aca62504599c2af3b3ff308f, type: 3}
+  shakeSpawnClone: {fileID: 11400000, guid: 83285b24df782ba409db6148aef46b56, type: 2}
 --- !u!82 &-8628626456824687204
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 34a4f438199717645882624594d03d80
+guid: 55951bb25f9eada42a9c7b12047d045a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -134,7 +134,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: perso_death_anim_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 16
+        height: 26
+      alignment: 9
+      pivot: {x: 0.4375, y: -0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729518838d82f854bb497b91d814c9dd
+      internalID: 662405313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perso_death_anim_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2
+        width: 15
+        height: 26
+      alignment: 9
+      pivot: {x: 0.4666667, y: -0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a883997165237e44d97832ccd64bc99c
+      internalID: -1756884504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +187,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      perso_death_anim_0: 662405313
+      perso_death_anim_1: -1756884504
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

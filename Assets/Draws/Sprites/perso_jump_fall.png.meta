@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 34a4f438199717645882624594d03d80
+guid: f2e62a6a826e69c4eb060aa0a029b4f0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +69,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 128
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -134,7 +134,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: perso_jump_fall_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 4
+        width: 15
+        height: 27
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.037037037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8234775aec2ae0046b2f5ebaf5bdc07b
+      internalID: -1774472697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perso_jump_fall_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4
+        width: 16
+        height: 26
+      alignment: 9
+      pivot: {x: 0.375, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb7ff187f891f4408606f2cb6213490
+      internalID: 1199418674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perso_jump_fall_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 4
+        width: 12
+        height: 29
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a35df0e13cfa7449515244f74776e9
+      internalID: 1562337728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perso_jump_fall_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 4
+        width: 12
+        height: 30
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c69382752ddd243a0d719c8a49401c
+      internalID: -695641269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +229,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      perso_jump_fall_0: -1774472697
+      perso_jump_fall_1: 1199418674
+      perso_jump_fall_2: 1562337728
+      perso_jump_fall_3: -695641269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

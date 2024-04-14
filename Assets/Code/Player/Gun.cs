@@ -8,9 +8,11 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform spawnPos;
     [SerializeField] private float speedEjectionClone = 1f;
     [SerializeField] private GameObject ballClone;
+    [SerializeField] private GameObject shootParticles;
 
     private Vector3 mousePos;
     private Vector2 lookdir;
+    private float angle;
 
     private RandomSounds randomSounds;
 
@@ -43,7 +45,7 @@ public class Gun : MonoBehaviour
     private void GunRotation()
     {
         lookdir = mousePos - transform.position;
-        float angle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
+        angle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
         gunTransform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
@@ -63,6 +65,7 @@ public class Gun : MonoBehaviour
             {
                 ball.SetPlayerLaunch(this.gameObject);
             }
+            Instantiate(shootParticles, spawnPos.position, Quaternion.Euler(-angle - 90, 90, -90));
         }
     }
 

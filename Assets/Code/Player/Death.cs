@@ -1,28 +1,48 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float delayRestart = 1;
+    [SerializeField] private Animator anim;
+    [SerializeField] private GameObject bloodParticles;
+    [SerializeField] private Shake cameraShake;
+    [SerializeField] private MonoBehaviour[] toDisableAtDeath;
 
-    // Update is called once per frame
-    void Update()
+    private Rigidbody2D rb;
+    private BoxCollider2D col;
+    private bool isDead = false;
+
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<BoxCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Death"))
+        if (!isDead && collision.CompareTag("Death"))
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            isDead = true;
+            StartCoroutine(DeathCoroutine());
         }
     }
 
+    private IEnumerator DeathCoroutine()
+    {
+        col.enabled = false;
+        rb.isKinematic = true;
+        rb.velocity = Vector2.zero;
+        anim.SetTrigger("Death");
+        CameraManager.Instance.Shaker(cameraShake);
+        Instantiate(bloodParticles, transform.position, Quaternion.identity);
+        foreach (MonoBehaviour mb in toDisableAtDeath)
+        {
+            mb.enabled = false;
+        }
+
+        yield return new WaitForSeconds(delayRestart);
+
+        GameManager.Instance.GetSceneManager().RestarttLevel();
+    }
 }
