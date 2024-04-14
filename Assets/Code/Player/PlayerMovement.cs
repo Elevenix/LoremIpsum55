@@ -18,14 +18,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jumpingPower;
     [SerializeField]
-    private Transform visualPlayer;
+    private Animator visualPlayer;
 
     private bool isPlayerFacingRight = true;
     private Collider2D myCollider;
 
     private RandomSounds randomSounds;
-
-    private Animator animator;
 
 
     // Start is called before the first frame update
@@ -35,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
         GameManager.Instance.AddPlayer(this.gameObject);
 
         randomSounds = GetComponent<RandomSounds>();
-
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,21 +50,20 @@ public class PlayerMovement : MonoBehaviour
 
         if(rb.velocity.x == 0)
         {
-            animator.SetBool("isMoving", false);
-        } else
+            visualPlayer.SetBool("isMoving", false);
+        } 
+        else
         {
-            if (IsGrounded())
-            {
-                animator.SetBool("isMoving", true);
-            }
+            visualPlayer.SetBool("isMoving", true);
         }
 
-        if(rb.velocity.y == 0)
+        if(rb.velocity.y <= -1f && !IsGrounded())
         {
-            animator.SetBool("isJumping", false);
-        } else
+            visualPlayer.SetBool("isFalling", true);
+        } 
+        else
         {
-            animator.SetBool("isJumping", true);
+            visualPlayer.SetBool("isFalling", false);
         }
     }
 
@@ -81,9 +76,9 @@ public class PlayerMovement : MonoBehaviour
     private void Flip()
     {
         isPlayerFacingRight = !isPlayerFacingRight;
-        Vector3 localScale = visualPlayer.localScale;
+        Vector3 localScale = visualPlayer.transform.localScale;
         localScale.x *= -1f;
-        visualPlayer.localScale = localScale;
+        visualPlayer.transform.localScale = localScale;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -97,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             randomSounds.PlaySound("Jump");
+            visualPlayer.SetTrigger("Jump");
         }
 
         if (context.canceled && rb.velocity.y > 0.0f)
