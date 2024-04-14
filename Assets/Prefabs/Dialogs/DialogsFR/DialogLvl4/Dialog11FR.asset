@@ -20,6 +20,6 @@ MonoBehaviour:
     text: "Euh... C'est nous aussi, celui-l\xE0 ? Je crois que j'engin dysfonctionne
       plein pot."
     delaySwitch: 2
-  - id: 1
+  - id: 0
     text: "Je ne sais pas mais il m'a bav\xE9 dessus."
     delaySwitch: 2

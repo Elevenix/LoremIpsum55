@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: "Ouch, je pense qu'on a mang\xE9 assez de saucisses, finalement."
+    text: Ow ! I think we ate enough sausages after all.
     delaySwitch: 2
   - id: 1
-    text: "A\xEFe !! Mais pourquoi c'est pas l'autre brute qui est tout en bas ?"
+    text: Ow ! Why isn't this brute lifting us all ?
     delaySwitch: 2
   - id: 2
-    text: FONCE MON POTE T'ES LE MEILLEUR !
+    text: GO PAL, YOU'RE THE BEST !
     delaySwitch: 2

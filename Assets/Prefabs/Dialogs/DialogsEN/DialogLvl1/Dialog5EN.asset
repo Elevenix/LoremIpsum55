@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 1
-    text: "Ah, on est quand m\xEAme mieux comme \xE7a !\n"
+    text: Ah, that's surely a lot better !
     delaySwitch: 2
   - id: 0
-    text: "Mieux ?! Mais... tu es litt\xE9ralement moi."
+    text: Better ? But you're... literally me.
     delaySwitch: 2
   - id: 1
-    text: "Sans les vell\xE9it\xE9s kamikazes. Le danger para\xEEt si loin...\nEt
-      la sati\xE9t\xE9 si proche !"
+    text: Without the autodestructive jumping-into-a-gigantic-hole desires. All my
+      troubles seem so far away. And food so close as well !
     delaySwitch: 2

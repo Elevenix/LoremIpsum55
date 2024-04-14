@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 3
-    text: Hmm eeheheh... Viaaaande ! Pfrrrrt.
+    text: Hmm eeheheh... Meaaaaatballs ! Pfrrrrt.
     delaySwitch: 2
   - id: 1
-    text: "Euh... C'est nous aussi, celui-l\xE0 ? Je crois que j'engin dysfonctionne
-      plein pot."
+    text: 'Erm... I think the gun isn''t working proprely. This '
     delaySwitch: 2
-  - id: 1
-    text: "Je ne sais pas mais il m'a bav\xE9 dessus."
+  - id: 0
+    text: I don't know about that but he did drool on me.
     delaySwitch: 2

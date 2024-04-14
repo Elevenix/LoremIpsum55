@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 1
-    text: C'est donc parfaitement normal de risquer NOTRE vie pour des saucisses
-      maintenant ?
+    text: So we're casually risking OUR lives for sausages now ?
     delaySwitch: 2
   - id: 0
-    text: "Le service des r\xE9clamations est g\xE9r\xE9 par 2, je suis d\xE9sol\xE9."
+    text: I'm sorry, but 2 is handling the litigation department.
     delaySwitch: 2
   - id: 2
-    text: '*Grogne*'
+    text: '*Snarls*'
     delaySwitch: 2

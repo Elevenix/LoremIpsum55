@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 2
-    text: "AAAAH ! Quel plaisir de ne plus \xEAtre ralenti par deux gringalets !
-      A moi toutes les saucisses ! Puissance illimit\xE9e !! "
+    text: 'AAAH ! What a treat not to be slowed down by you two WIMPS ! '
     delaySwitch: 2
   - id: 0
-    text: "Allons-bon. Dois-je mentionner que nous avons le m\xEAme corps ?"
+    text: Oh come on. Do I have to mention that we have the same body ?
     delaySwitch: 2
   - id: 1
-    text: "Et j'ai r\xE9ussi \xE0 sortir avant toi, esp\xE8ce de bourrin inconscient."
+    text: And I managed to get out first, you unpleasant oat.
     delaySwitch: 2
   - id: 2
     text: MRAAAAAH !

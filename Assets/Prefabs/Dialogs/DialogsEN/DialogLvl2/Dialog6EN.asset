@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 1
-    text: "D\xE9licieux ! On forme peut-\xEAtre une bonne \xE9quipe finalement."
+    text: Delicious ! Maybe we're a decent team after all.
     delaySwitch: 2
   - id: 1
-    text: "\"Finalement\" ? Tu songeais d\xE9j\xE0 \xE0 une \xE9ventuelle ind\xE9pendance
-      ?"
+    text: Oh, so you've already thought about the potentiality of independance.
     delaySwitch: 2
   - id: 1
-    text: "Peut-\xEAtre, peut-\xEAtre.\n"
+    text: Maybe so, maybe so.
     delaySwitch: 2

@@ -14,22 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: "Mais o\xF9 est-ce que je me suis encore fourr\xE9 ? "
+    text: Ah ! Where the hell am I this time...
     delaySwitch: 2
   - id: 0
-    text: "On pourrait s'imaginer autrement le dernier homme sur Terre: malin, d\xE9brouillard,
-      organis\xE9, toutes ces choses l\xE0. "
+    text: Ain't the last man on the planet supposed to be smart, organised, methodical
+      and such ?
     delaySwitch: 2
   - id: 0
-    text: "C'est loup\xE9, si je pouvais je me perdrais dans ma propre chambre..."
+    text: Classic me, I could get lost in my own bedroom.
     delaySwitch: 2
   - id: 0
-    text: '*Ventre qui gargouille*
+    text: '*Belly gurgles*
 
 '
     delaySwitch: 2
   - id: 0
-    text: 'Pas le choix, il faut continuer. Je ne peux pas repartir d''ici sans rien.
-
-'
+    text: Well, I got to move forward.Can't go back empty handed.
     delaySwitch: 2

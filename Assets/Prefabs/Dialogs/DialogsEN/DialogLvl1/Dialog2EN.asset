@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: "Qu'est-ce que c'est que cet endroit ? \xC7a a l'air immense et \xE7a n'existe
-      pas sur la carte."
+    text: Woah, what is this place ? It looks huge and it's certainly not on the
+      maps I got.
     delaySwitch: 2
   - id: 0
-    text: "Je viens peut-\xEAtre de toucher le gros lot !\n"
+    text: 'Did i just hit the jackpot ? Surely worth checking !
+
+'
     delaySwitch: 2
