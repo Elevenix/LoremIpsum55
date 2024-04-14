@@ -25,7 +25,7 @@ public class DialogManager : MonoBehaviour
 
     private bool textFinished = true;
     private Coroutine letterCoroutine;
-    private TextMeshPro previousTextMesh;
+    private TextMeshProUGUI previousTextMesh;
     private RandomSounds randomSounds;
 
     private void Awake()
@@ -63,7 +63,7 @@ public class DialogManager : MonoBehaviour
     /// Launch the next text
     /// </summary>
     /// <param name="textMesh"></param>
-    public void NextText(TextMeshPro textMesh, string text, string color)
+    public void NextText(TextMeshProUGUI textMesh, string text, string color)
     {
         if (previousTextMesh != null)
             previousTextMesh.text = "";
@@ -93,7 +93,7 @@ public class DialogManager : MonoBehaviour
         textFinished = false;
         foreach (TextClone tc in dialog.exchanges)
         {
-            TextMeshPro cloneTextMesh = GameManager.Instance.GetPlayerText(tc.id);
+            TextMeshProUGUI cloneTextMesh = GameManager.Instance.GetPlayerText(tc.id);
             // Get TextMesh of the player
             if (cloneTextMesh == null)
             {
@@ -128,7 +128,7 @@ public class DialogManager : MonoBehaviour
     /// </summary>
     /// <param name="text"> the string to delayed </param>
     /// <returns></returns>
-    private IEnumerator DelayLetters(string text, TextMeshPro textMesh, string color)
+    private IEnumerator DelayLetters(string text, TextMeshProUGUI textMesh, string color)
     {
         string newText = color;
         for(int i=0; i < text.Length; i++)

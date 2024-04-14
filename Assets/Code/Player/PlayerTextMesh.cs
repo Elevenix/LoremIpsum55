@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class PlayerTextMesh : MonoBehaviour
 {
-    public TextMeshPro textMeshDialog;
-    public TextMeshPro textMeshId;
+    public TextMeshProUGUI textMeshDialog;
+    public TextMeshProUGUI textMeshId;
 }

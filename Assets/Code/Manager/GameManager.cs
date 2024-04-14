@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="id"> The id of the clone </param>
     /// <returns></returns>
-    public TextMeshPro GetPlayerText(int id)
+    public TextMeshProUGUI GetPlayerText(int id)
     {
         if (players[id].TryGetComponent(out PlayerTextMesh tmp))
             return tmp.textMeshDialog;
