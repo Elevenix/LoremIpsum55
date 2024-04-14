@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Walls
+    uniqueID: 2482947333
+    locked: 0
   - name: FirstLayer
     uniqueID: 160607401
     locked: 0

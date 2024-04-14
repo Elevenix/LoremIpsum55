@@ -11,11 +11,9 @@ public class GameManager : MonoBehaviour
 
     private List<GameObject> players = new List<GameObject>();
     private int actualGunHold = 0;
-
-    public static GameManager Instance;
-
     private RandomSounds randomSounds;
 
+    public static GameManager Instance;
 
     // Singleton
     public void Awake()
@@ -29,7 +27,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        randomSounds = GetComponent<RandomSounds>();
+        if (this.TryGetComponent(out RandomSounds rs))
+            randomSounds = rs;
     }
 
     // Update is called once per frame

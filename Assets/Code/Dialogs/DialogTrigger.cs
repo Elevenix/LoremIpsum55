@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    [SerializeField] private Dialog dialog;
+    [SerializeField] private Dialog dialogEn;
+    [SerializeField] private Dialog dialogFr;
     private bool alreadyTouched = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -10,7 +11,10 @@ public class DialogTrigger : MonoBehaviour
         if (!alreadyTouched && collision.CompareTag("Player"))
         {
             alreadyTouched = true;
-            GameManager.Instance.LaunchDialog(dialog);
+            if(PlayerPrefs.GetInt("Language") == 0)
+                GameManager.Instance.LaunchDialog(dialogEn);
+            else
+                GameManager.Instance.LaunchDialog(dialogFr);
         }
     }
 }
