@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e9eb2e748f35440a2d155bcbe6edab, type: 3}
+  m_Name: Dialog10FR
+  m_EditorClassIdentifier: 
+  exchanges:
+  - id: 0
+    text: "Ouch, je pense qu'on a mang\xE9 assez de saucisses, finalement."
+    delaySwitch: 2
+  - id: 1
+    text: "A\xEFe !! Mais pourquoi c'est pas l'autre brute qui est tout en bas ?"
+    delaySwitch: 2
+  - id: 2
+    text: FONCE MON POTE T'ES LE MEILLEUR !
+    delaySwitch: 2

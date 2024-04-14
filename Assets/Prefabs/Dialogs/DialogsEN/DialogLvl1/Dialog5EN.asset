@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13e9eb2e748f35440a2d155bcbe6edab, type: 3}
-  m_Name: FirstDialog
+  m_Name: Dialog5EN
   m_EditorClassIdentifier: 
   exchanges:
+  - id: 1
+    text: "Ah, on est quand m\xEAme mieux comme \xE7a !\n"
+    delaySwitch: 2
   - id: 0
-    text: "Mais o\xF9 est-ce que je me suis encore fourr\xE9 ? "
-  - id: 0
-    text: "On pourrait s'imaginer autrement le dernier homme sur Terre: malin, d\xE9brouillard,
-      organis\xE9, toutes ces choses l\xE0. "
-  - id: 0
-    text: "C'est loup\xE9, si je pouvais je me perdrais dans ma propre chambre..."
+    text: "Mieux ?! Mais... tu es litt\xE9ralement moi."
+    delaySwitch: 2
+  - id: 1
+    text: "Sans les vell\xE9it\xE9s kamikazes. Le danger para\xEEt si loin...\nEt
+      la sati\xE9t\xE9 si proche !"
+    delaySwitch: 2

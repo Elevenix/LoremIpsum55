@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e9eb2e748f35440a2d155bcbe6edab, type: 3}
+  m_Name: Dialog1FR
+  m_EditorClassIdentifier: 
+  exchanges:
+  - id: 0
+    text: "Mais o\xF9 est-ce que je me suis encore fourr\xE9 ? "
+    delaySwitch: 2
+  - id: 0
+    text: "On pourrait s'imaginer autrement le dernier homme sur Terre: malin, d\xE9brouillard,
+      organis\xE9, toutes ces choses l\xE0. "
+    delaySwitch: 2
+  - id: 0
+    text: "C'est loup\xE9, si je pouvais je me perdrais dans ma propre chambre..."
+    delaySwitch: 2
+  - id: 0
+    text: '*Ventre qui gargouille*
+
+'
+    delaySwitch: 2
+  - id: 0
+    text: 'Pas le choix, il faut continuer. Je ne peux pas repartir d''ici sans rien.
+
+'
+    delaySwitch: 2
