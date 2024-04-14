@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 1
-    text: "Andouille ? C'est fort de caf\xE9. D'abord, moi je n'aurais jamais saut\xE9."
+    text: Doofus ? That's a step too far. FYI, I wouldn't have jumped in the first
+      place.
     delaySwitch: 2
   - id: 0
-    text: "Comment \xE7a \"moi\" ? Qui a parl\xE9 ?"
+    text: What "I" ? Who's speaking ?!
     delaySwitch: 2

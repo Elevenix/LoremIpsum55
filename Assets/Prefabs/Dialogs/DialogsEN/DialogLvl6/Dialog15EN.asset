@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: Je sens que vous allez encore foutre le boxon.
+    text: I feel that you're going to make a mess again.
     delaySwitch: 2
   - id: 1
-    text: Qui sait ?
+    text: Maybe so.
     delaySwitch: 0
   - id: 2
-    text: J'EN VEUUUX !!
+    text: GIVE ME SOME !!
     delaySwitch: 0
   - id: 3
     text: GLBRRRT.
     delaySwitch: 2
   - id: 0
-    text: "Je prends \xE7a pour un oui..."
+    text: I'll take that as a yes.
     delaySwitch: 2

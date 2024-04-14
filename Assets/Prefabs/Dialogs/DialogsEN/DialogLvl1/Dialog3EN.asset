@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: "Ouille... On dirait que je suis compl\xE8tement coinc\xE9, et pas de cantine
-      \xE0 l'horizon. Bien jou\xE9, triple andouille."
+    text: Ouch... It looks like I'm trapped now. And no huge food stock to be seen.
+      Well played, you doofus.
     delaySwitch: 2

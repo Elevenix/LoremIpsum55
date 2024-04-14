@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 3
-    text: Je l'adore. On cause de plein de choses lui et moi.
+    text: I love that guy. We can chat about so much !
     delaySwitch: 2
   - id: 0
-    text: Je n'en doute pas une seconde...
+    text: I'm not surprised one bit.
     delaySwitch: 2

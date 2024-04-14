@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: Qu'est-ce qu'ils ont avec les piques dans ce trou ?
+    text: What's with all the spikes, jeez.
     delaySwitch: 2
   - id: 1
-    text: "Je ne sais pas, mais n'invoque surtout pas N2. Pour le bien de nos post\xE9rieurs
-      respectifs..."
+    text: No idea, but please don't summon 2 again. For our posterior's sake...
     delaySwitch: 2

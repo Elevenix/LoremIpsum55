@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: Super facile !
+    text: Easy-peasy !
     delaySwitch: 2
   - id: 1
-    text: "Ce n'est pas toi qui a \xE9t\xE9 lanc\xE9 au dessus des pi\xE8ges avec
-      une violence INOU\xEFE !"
-    delaySwitch: 2
-  - id: 0
-    text: 'Easy-peasy ! '
+    text: You weren't the one who was thrown above traps with REVOLTING violence
+      !
     delaySwitch: 2

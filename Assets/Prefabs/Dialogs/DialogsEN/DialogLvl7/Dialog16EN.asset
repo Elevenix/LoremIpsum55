@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 1
-    text: Super facile !
+    text: Easy-peasy !
     delaySwitch: 0
   - id: 2
-    text: Super facile !
+    text: Easy-peasy !
     delaySwitch: 2
   - id: 0
-    text: "Ca va, \xE7a va, j'ai compris."
+    text: Alright alright, I get it.
     delaySwitch: 0

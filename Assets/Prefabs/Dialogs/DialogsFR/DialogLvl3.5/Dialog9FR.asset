@@ -20,6 +20,3 @@ MonoBehaviour:
     text: "Ce n'est pas toi qui a \xE9t\xE9 lanc\xE9 au dessus des pi\xE8ges avec
       une violence INOU\xEFE !"
     delaySwitch: 2
-  - id: 0
-    text: 'Easy-peasy ! '
-    delaySwitch: 2
