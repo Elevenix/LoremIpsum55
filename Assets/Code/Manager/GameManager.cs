@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Change gun with different players
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && hasGun)
         {
             ChangeGunHold();
             randomSounds.PlaySound("GunHolder");
