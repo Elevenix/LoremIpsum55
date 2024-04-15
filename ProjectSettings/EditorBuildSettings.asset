@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 4c207f86f02724583bfa3d5cbb4e2e57
   - enabled: 1
+    path: Assets/Scenes/Levels/Level 0.1.unity
+    guid: 144465ca2a3519f4c9c0d876a86458a7
+  - enabled: 1
     path: Assets/Scenes/Levels/Level 1.unity
     guid: e02eb1113daeb6e4996d9d23dff60daf
   - enabled: 1
@@ -38,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level 10.unity
     guid: da06d459733d04db192967fb5ebab68e
+  - enabled: 1
+    path: Assets/Scenes/Levels/durdur.unity
+    guid: bfd995a9db296514689d9925dd9dd5e2
+  - enabled: 1
+    path: Assets/Scenes/Levels/mitraille 1.unity
+    guid: 98144d9bccb20214e9b64f476fe8935a
+  - enabled: 1
+    path: Assets/Scenes/Levels/mitraille 2.unity
+    guid: 281beed675b47404fbd3f3065b2e8090
   m_configObjects: {}

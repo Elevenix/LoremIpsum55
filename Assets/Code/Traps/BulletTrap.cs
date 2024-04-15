@@ -6,6 +6,7 @@ public class BulletTrap : MonoBehaviour
 {
     public Vector2 direction;
     public float speed;
+    [SerializeField] private GameObject particleDeath;
 
     private Rigidbody2D rb;
 
@@ -26,6 +27,8 @@ public class BulletTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+        if(!collision.CompareTag("Respawn"))
+            Destroy(this.gameObject);
+        Instantiate(particleDeath, transform.position, Quaternion.identity);
     }
 }
