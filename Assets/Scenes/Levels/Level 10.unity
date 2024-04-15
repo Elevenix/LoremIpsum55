@@ -304,15 +304,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3906683663869971922, guid: f88bcde2ca70a454c90a4b3de6186138, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.68952715
+      value: 1.5600553
       objectReference: {fileID: 0}
     - target: {fileID: 3906683663869971922, guid: f88bcde2ca70a454c90a4b3de6186138, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.589008
+      value: -8.46
       objectReference: {fileID: 0}
     - target: {fileID: 3906683663869971922, guid: f88bcde2ca70a454c90a4b3de6186138, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7385442
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 3906683663869971922, guid: f88bcde2ca70a454c90a4b3de6186138, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4786,9 +4786,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 7bde8459de3c60f4880781d8a4d370e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 618e83b059180b64189c5183c5815236, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 26.666666, y: 15}
@@ -5878,6 +5878,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 38684440204983348, guid: 48585cf1fe6a34f69923d5c03beff914, type: 3}
   m_PrefabInstance: {fileID: 672663460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1748138833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3714374677082104189, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_Name
+      value: BackgroundThroughWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821188976110442211, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2114733a0e02dd545a86221553cf8eb5, type: 3}
 --- !u!4 &1757855625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7167195313695933923, guid: 54c4219d60e7023488497a2ba22102d4, type: 3}
@@ -6531,7 +6588,7 @@ SpriteRenderer:
   m_SortingLayerID: -1812019963
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 53aca6ea90652514abdb6204bf9ffcf3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c27ae572e3bfba54a9f14f76890baa11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -7159,3 +7216,4 @@ SceneRoots:
   - {fileID: 343751299}
   - {fileID: 1977877372}
   - {fileID: 1335967572}
+  - {fileID: 1748138833}
