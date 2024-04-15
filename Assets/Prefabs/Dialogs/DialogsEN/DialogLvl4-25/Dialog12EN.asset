@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Dialog12EN
   m_EditorClassIdentifier: 
   exchanges:
+  - id: 0
+    text: ' I feel that you''re going to make a mess again. '
+    delaySwitch: 2
+  - id: 2
+    text: GIVE ME SOME !
+    delaySwitch: 2
   - id: 3
-    text: I love that guy. We can chat about so much !
+    text: 'GLBRRT. '
     delaySwitch: 2
   - id: 0
-    text: I'm not surprised one bit.
+    text: 'I''ll take that as a yes. '
     delaySwitch: 2

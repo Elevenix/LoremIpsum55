@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Dialog12FR
   m_EditorClassIdentifier: 
   exchanges:
-  - id: 3
-    text: Je l'adore. On cause de plein de choses lui et moi.
-    delaySwitch: 2
   - id: 0
-    text: Je n'en doute pas une seconde...
+    text: 'Je sens que vous allez encore foutre le boxon. '
+    delaySwitch: 2
+  - id: 2
+    text: "J\u2019EN VEUX !!"
+    delaySwitch: 1
+  - id: 3
+    text: 'GLBRRRT. '
+    delaySwitch: 1
+  - id: 0
+    text: "Je prends \xE7a pour un oui. "
     delaySwitch: 2

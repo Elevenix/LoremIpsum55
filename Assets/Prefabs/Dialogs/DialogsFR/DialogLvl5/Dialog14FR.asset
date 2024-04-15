@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exchanges:
   - id: 0
-    text: "Visiblement quelque chose de plus pr\xE9cieux qu'une saucisse est gard\xE9
-      ici."
-    delaySwitch: 2
+    text: "Oh... Celui-ci m'a l'air compliqu\xE9. On doit se rapprocher des choses
+      int\xE9ressantes. "
+    delaySwitch: 3
+  - id: 3
+    text: BLFRTPP.
+    delaySwitch: 1
   - id: 2
-    text: 'IMPOSSIBLE !
-
-'
+    text: ' Il dit qu''il a tout compris. '
     delaySwitch: 2
+  - id: 0
+    text: ...
+    delaySwitch: 1

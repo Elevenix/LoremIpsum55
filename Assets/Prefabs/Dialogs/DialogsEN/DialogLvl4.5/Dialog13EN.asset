@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: Dialog13EN
   m_EditorClassIdentifier: 
   exchanges:
-  - id: 1
-    text: So we're casually risking OUR lives for sausages now ?
-    delaySwitch: 2
   - id: 0
-    text: I'm sorry, but 2 is handling the litigation department.
+    text: 'Is it me or we''re getting really good at this ? '
     delaySwitch: 2
-  - id: 2
-    text: '*Snarls*'
+  - id: 1
+    text: 'Hm. I hope it''s worth the sweat. '
     delaySwitch: 2

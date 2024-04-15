@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: Dialog16FR
   m_EditorClassIdentifier: 
   exchanges:
-  - id: 1
-    text: Super facile !
-    delaySwitch: 0
-  - id: 2
-    text: Super facile !
-    delaySwitch: 2
   - id: 0
-    text: "Ca va, \xE7a va, j'ai compris."
-    delaySwitch: 0
+    text: 'Mais qui a construit ce truc ? Visiblement il ne l''a pas fait tout seul...
+      Il doit y avoir plusieurs pistolets. '
+    delaySwitch: 4
+  - id: 2
+    text: "JE VAIS LE D\xC9MARRER ! "
+    delaySwitch: 2

@@ -19,12 +19,3 @@ MonoBehaviour:
   - id: 1
     text: Maybe so.
     delaySwitch: 0
-  - id: 2
-    text: GIVE ME SOME !!
-    delaySwitch: 0
-  - id: 3
-    text: GLBRRRT.
-    delaySwitch: 2
-  - id: 0
-    text: I'll take that as a yes.
-    delaySwitch: 2

@@ -13,13 +13,9 @@ MonoBehaviour:
   m_Name: Dialog13FR
   m_EditorClassIdentifier: 
   exchanges:
-  - id: 1
-    text: C'est donc parfaitement normal de risquer NOTRE vie pour des saucisses
-      maintenant ?
-    delaySwitch: 2
   - id: 0
-    text: "Le service des r\xE9clamations est g\xE9r\xE9 par 2, je suis d\xE9sol\xE9."
+    text: 'Mais c''est qu''on devient bons les gars ! '
     delaySwitch: 2
-  - id: 2
-    text: '*Grogne*'
+  - id: 1
+    text: "Hm. J'esp\xE8re vraiment que le jeu en vaut la chandelle. "
     delaySwitch: 2

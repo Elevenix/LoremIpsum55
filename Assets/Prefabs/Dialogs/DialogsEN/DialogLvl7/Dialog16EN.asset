@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: Dialog16EN
   m_EditorClassIdentifier: 
   exchanges:
-  - id: 1
-    text: Easy-peasy !
-    delaySwitch: 0
-  - id: 2
-    text: Easy-peasy !
-    delaySwitch: 2
   - id: 0
-    text: Alright alright, I get it.
-    delaySwitch: 0
+    text: 'Who the hell built that thing ? He clearly didn''t do it alone too...
+      This gun sure isn''t one of a kind. '
+    delaySwitch: 4
+  - id: 2
+    text: "I'LL SMASH HIM ! \t"
+    delaySwitch: 2
