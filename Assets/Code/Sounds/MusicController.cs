@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    private static MusicController musicController;
+    public static MusicController musicController;
+
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     private void Awake()
@@ -18,5 +20,7 @@ public class MusicController : MonoBehaviour
             musicController = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 }
