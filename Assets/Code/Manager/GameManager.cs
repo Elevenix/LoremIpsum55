@@ -97,8 +97,11 @@ public class GameManager : MonoBehaviour
     /// <returns></returns>
     public TextMeshProUGUI GetPlayerText(int id)
     {
-        if (players[id].TryGetComponent(out PlayerTextMesh tmp))
-            return tmp.textMeshDialog;
+        if(id < players.Count)
+        {
+            if (players[id].TryGetComponent(out PlayerTextMesh tmp))
+                return tmp.textMeshDialog;
+        }
         return null;
     }
 

@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13e9eb2e748f35440a2d155bcbe6edab, type: 3}
-  m_Name: Dialog4EN
+  m_Name: Dialog8.1FR
   m_EditorClassIdentifier: 
   exchanges:
-  - id: 1
-    text: Doofus ? That's a step too far. FYI, I wouldn't have jumped in the first
-      place.
-    delaySwitch: 3
-  - id: 0
-    text: What "I" ? Who's speaking ?!
+  - id: 2
+    text: "Moi j'aime bien N\xB03. On parle de plein de trucs ensemble. "
     delaySwitch: 2
+  - id: 0
+    text: "Je ne suis pas \xE9tonn\xE9..."
+    delaySwitch: 1

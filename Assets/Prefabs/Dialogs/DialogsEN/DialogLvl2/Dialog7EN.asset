@@ -13,15 +13,12 @@ MonoBehaviour:
   m_Name: Dialog7EN
   m_EditorClassIdentifier: 
   exchanges:
+  - id: 1
+    text: 'Ow ! Enough sausages I think. '
+    delaySwitch: 2
   - id: 2
-    text: 'AAAH ! What a treat not to be slowed down by you two WIMPS ! '
+    text: 'NO THINKING ! TO ARMS ! '
     delaySwitch: 2
   - id: 0
-    text: Oh come on. Do I have to mention that we have the same body ?
-    delaySwitch: 2
-  - id: 1
-    text: And I managed to get out first, you unpleasant oat.
-    delaySwitch: 2
-  - id: 2
-    text: MRAAAAAH !
+    text: "Oh dear\u2026 Who\u2019s that now ?!"
     delaySwitch: 2

@@ -13,16 +13,12 @@ MonoBehaviour:
   m_Name: Dialog7FR
   m_EditorClassIdentifier: 
   exchanges:
+  - id: 1
+    text: Ouch ! Assez de saucisses, non ?
+    delaySwitch: 2
   - id: 2
-    text: "AAAAH ! Quel plaisir de ne plus \xEAtre ralenti par deux gringalets !
-      A moi toutes les saucisses ! Puissance illimit\xE9e !! "
+    text: "NON ! A l\u2019ATTAQUE !! "
     delaySwitch: 2
   - id: 0
-    text: "Allons-bon. Dois-je mentionner que nous avons le m\xEAme corps ?"
-    delaySwitch: 2
-  - id: 1
-    text: "Et j'ai r\xE9ussi \xE0 sortir avant toi, esp\xE8ce de bourrin inconscient."
-    delaySwitch: 2
-  - id: 2
-    text: MRAAAAAH !
+    text: "Allons-bon, c\u2019est qui celui-l\xE0 encore ?!"
     delaySwitch: 2

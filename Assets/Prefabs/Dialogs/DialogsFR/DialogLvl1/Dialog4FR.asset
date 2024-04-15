@@ -15,7 +15,7 @@ MonoBehaviour:
   exchanges:
   - id: 1
     text: "Andouille ? C'est fort de caf\xE9. D'abord, moi je n'aurais jamais saut\xE9."
-    delaySwitch: 2
+    delaySwitch: 2.5
   - id: 0
     text: "Comment \xE7a \"moi\" ? Qui a parl\xE9 ?"
     delaySwitch: 2

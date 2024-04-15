@@ -22,4 +22,4 @@ MonoBehaviour:
   - id: 1
     text: "Sans les vell\xE9it\xE9s kamikazes. Le danger para\xEEt si loin...\nEt
       la sati\xE9t\xE9 si proche !"
-    delaySwitch: 2
+    delaySwitch: 2.5
