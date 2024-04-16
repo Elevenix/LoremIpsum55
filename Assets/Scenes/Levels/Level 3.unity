@@ -594,6 +594,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6474541386712373688, guid: 0ae3545f9b495470eae6dd13144fa029, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474541386712373688, guid: 0ae3545f9b495470eae6dd13144fa029, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7943586103450366240, guid: 0ae3545f9b495470eae6dd13144fa029, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.807

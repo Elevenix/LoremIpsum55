@@ -13,17 +13,14 @@ public class VolumeMusic : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("Music") || !PlayerPrefs.HasKey("Sounds"))
         {
-            PlayerPrefs.SetFloat("Music", -20);
-            PlayerPrefs.SetFloat("Sounds", -20);
+            PlayerPrefs.SetFloat("Music", -30);
+            PlayerPrefs.SetFloat("Sounds", -30);
         }
-        else
-        {
-            sliderMusic.value = PlayerPrefs.GetFloat("Music");
-            sliderSounds.value = PlayerPrefs.GetFloat("Sounds");
+        sliderMusic.value = PlayerPrefs.GetFloat("Music");
+        sliderSounds.value = PlayerPrefs.GetFloat("Sounds");
 
-            ValueChangeMusic(sliderMusic.value);
-            ValueChangeSound(sliderSounds.value);
-        }
+        ValueChangeMusic(sliderMusic.value);
+        ValueChangeSound(sliderSounds.value);
 
     }
 

@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e48f0ada84c5094d8b25e813bad3daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: 24b37e713f37ba44db229a73bd30ecb1, type: 3}
+  music: {fileID: 8300000, guid: 65ee6339aab6d4133b8900f1b9f735fc, type: 3}
 --- !u!4 &2117574427
 Transform:
   m_ObjectHideFlags: 0
@@ -1152,5 +1152,5 @@ SceneRoots:
   - {fileID: 967193243}
   - {fileID: 310231515}
   - {fileID: 958321036}
-  - {fileID: 2117574427}
   - {fileID: 1390862971}
+  - {fileID: 2117574427}
