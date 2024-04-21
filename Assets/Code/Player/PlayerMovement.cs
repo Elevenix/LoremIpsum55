@@ -19,25 +19,40 @@ public class PlayerMovement : MonoBehaviour
     private float jumpingPower;
     [SerializeField]
     private Animator visualPlayer;
+    [SerializeField]
+    private InputActionAsset inputAction;
 
     private bool isPlayerFacingRight = true;
     private Collider2D myCollider;
 
     private RandomSounds randomSounds;
-
+    private PlayerInput playerInput;
 
     // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<Collider2D>();
         GameManager.Instance.AddPlayer(this.gameObject);
-
         randomSounds = GetComponent<RandomSounds>();
+
+        /** ONLY PLAYER 0 DON T MOVE
+        if (playerInput == null && TryGetComponent(out PlayerInput pi))
+        {
+            playerInput = pi;
+        }
+        else if (playerInput == null)
+        {
+            playerInput = this.gameObject.AddComponent<PlayerInput>();
+        }
+
+        playerInput.actions = inputAction;*/
     }
 
     // Update is called once per frame
     void Update()
     {
+        Actions();
+
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
         if (!isPlayerFacingRight && horizontal > 0f)
@@ -81,6 +96,34 @@ public class PlayerMovement : MonoBehaviour
         visualPlayer.transform.localScale = localScale;
     }
 
+    private void Actions()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+        /**
+        if (direction > .1f)
+            horizontal = 1;
+        else if (direction < -.1f)
+            horizontal = -1;
+        else
+            horizontal = 0;*/
+
+        if (true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                randomSounds.PlaySound("Jump");
+                visualPlayer.SetTrigger("Jump");
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0.0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
+        }
+    }
+
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
@@ -88,6 +131,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
+        Debug.Log("JUMP : " + gameObject.name);
+
         if(context.performed && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
@@ -101,10 +146,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.position, radiusGroundCheck);
     }
+#endif
 }
